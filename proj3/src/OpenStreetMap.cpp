@@ -229,8 +229,8 @@ struct COpenStreetMap::SImplementation{
 
     std::shared_ptr<CStreetMap::SWay> WayByID(TWayID id) const noexcept{
        
-        std::cout<<"MappedWays is size: "<<MappedWays.size()<<std::endl;
-        std::cout<<"Mappedways[0] = "<<MappedWays[0]<<std::endl;
+        //std::cout<<"MappedWays is size: "<<MappedWays.size()<<std::endl;
+        //std::cout<<"Mappedways[0] = "<<MappedWays[0]<<std::endl;
         if(MappedWays.find(8699537) == MappedWays.end())
             std::cout<< "Element Not Present"<<std::endl;
         else{
@@ -238,14 +238,14 @@ struct COpenStreetMap::SImplementation{
         }
 
         try {
-            std::cout<<"TRYING"<<std::endl;
-            std::cout<<"ID is: "<<id<<std::endl;
+            //std::cout<<"TRYING"<<std::endl;
+            //std::cout<<"ID is: "<<id<<std::endl;
             MappedWays.at(id); 
-            std::cout<<"NODE is: "<<MappedWays.at(id)<<std::endl;
-            vector::at throws an out-of-range
+            //std::cout<<"NODE is: "<<MappedWays.at(id)<<std::endl;
+            //vector::at throws an out-of-range
         }
         catch (const std::out_of_range& mapnode) {
-            std::cout<<"OUT OF RANGE"<<std::endl;;
+            //std::cout<<"OUT OF RANGE"<<std::endl;;
             return nullptr;
         }
     

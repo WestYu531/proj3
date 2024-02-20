@@ -1,0 +1,9 @@
+Internal Implementation Structure: The SImplementation struct inside the CCSVBusSystem class encapsulates the internal data structures such as a vector of stops and routes. This approach uses the Pimpl (Pointer to Implementation) idiom to hide complex implementation details from the class interface, which helps in maintaining binary compatibility and reducing compilation dependencies.
+
+Constructor: The constructor of CCSVBusSystem takes shared pointers to CDSVReader objects as parameters, which are presumably used to read and parse CSV files containing stop and route data. The constructor initializes the DImplementation pointer with a new instance of SImplementation, and it's expected to populate the internal data structures with the parsed data.
+
+Destructor: The destructor of CCSVBusSystem is trivial because smart pointers (std::shared_ptr and std::unique_ptr) are used to manage dynamic memory, which automatically takes care of resource deallocation.
+
+Member Functions: The class provides various member functions to access the number of stops and routes, and to retrieve specific stop and route details by index or identifier. These functions make use of the internal data structures to return the requested information, handling cases where the requested index or identifier might be out of range.
+
+Concrete Implementations of Abstract Interfaces: The CStopImpl and CRouteImpl classes are concrete implementations of the SStop and SRoute abstract interfaces defined in the CBusSystem class. These implementations provide the actual logic for the functions declared in the interfaces, such as getting the ID of a stop or the name of a route.
